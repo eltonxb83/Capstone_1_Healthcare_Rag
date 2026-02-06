@@ -100,8 +100,8 @@ Note: The reason llama.cpp was chosen due to the fact that it allows me to go un
 
 - Navigate to project root folder
 - run **python3 -m venv <user_defined_env_name>**
-- run **source <user_defined_env_name>/bin/activate**	# Mac/Linux
-- **user_defined_env_name\Scripts\activate**	# Windows
+- either run **source <user_defined_env_name>/bin/activate** OR	# Mac/Linux
+- run **user_defined_env_name\Scripts\activate**		# Windows
 - run **pip install -r requirements.txt**
 - run **streamlit run streamlit_app.py**
 
