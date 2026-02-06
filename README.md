@@ -95,15 +95,15 @@ Note: The reason llama.cpp was chosen due to the fact that it allows me to go un
 
 1. Clone repo
 2. Download **Meta-llama-3.1-8b-instruct-q4_k_m.gguf**
-Source: https://huggingface.co/joshnader/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF
+- Source: https://huggingface.co/joshnader/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF
 3. Create environment:
 
-	. Navigate to project root folder
-	. run **python3 -m venv <user_defined_env_name>
-	. run **source <user_defined_env_name>/bin/activate**	# Mac/Linux
-	      **user_defined_env_name\Scripts\activate**	# Windows
-	. run **pip install -r requirements.txt**
-	. run **streamlit run streamlit_app.py**
+- Navigate to project root folder
+- run **python3 -m venv <user_defined_env_name>**
+- run **source <user_defined_env_name>/bin/activate**	# Mac/Linux
+-     **user_defined_env_name\Scripts\activate**	# Windows
+- run **pip install -r requirements.txt**
+- run **streamlit run streamlit_app.py**
 
 ---
 
