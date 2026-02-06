@@ -1,0 +1,323 @@
+# ================================
+# Core Web App / UI Layer
+# ================================
+
+altair==6.0.0
+# Declarative charting library used by Streamlit for plotting.
+# Lets you describe charts using data + rules instead of drawing manually.
+# Example use: interactive line charts, bar charts, scatter plots in dashboards.
+
+streamlit==1.53.1
+# Main web framework for this project.
+# Turns Python scripts into web apps.
+# Handles UI elements like text boxes, chat input, buttons, expanders, layout, etc.
+# This is what makes your RAG system usable in a browser.
+
+
+pydeck==0.9.1
+# Visualization layer built on top of WebGL.
+# Streamlit uses it for advanced visualizations like maps and layers.
+# You may not use it directly, but Streamlit pulls it in.
+
+tornado==6.5.4
+# Async web server framework.
+# Streamlit runs on Tornado internally to handle requests, sessions, and websockets.
+
+
+# ================================
+# Data Handling & Computation
+# ================================
+
+numpy==2.4.0
+# Core numerical computing library.
+# Everything ML-related uses NumPy arrays under the hood.
+# Powers vector math, embeddings, distances, matrices, etc.
+
+pandas==2.3.3
+# DataFrame library for tabular data.
+# Used to load, clean, manipulate datasets.
+# In RAG, often used to manage documents, metadata, logs, etc.
+
+scipy==1.16.3
+# Scientific computing library built on NumPy.
+# Provides linear algebra, distance functions, statistics.
+# Often used indirectly by scikit-learn and FAISS-like workflows.
+
+pyarrow==23.0.0
+# Columnar memory format for fast data transfer.
+# Used by pandas for efficient IO and memory handling.
+# Useful for large datasets.
+
+joblib==1.5.3
+# Utility for saving/loading Python objects and parallel processing.
+# scikit-learn uses this internally for model persistence and speed.
+
+threadpoolctl==3.6.0
+# Controls how many threads native libraries use (BLAS, MKL).
+# Prevents CPU over-subscription in ML workloads.
+
+
+# ================================
+# Machine Learning / NLP
+# ================================
+
+scikit-learn==1.8.0
+# Classical ML library.
+# Provides clustering, classification, vectorizers, pipelines, metrics.
+# Used for preprocessing, similarity, and experimentation.
+
+sentence-transformers==5.2.0
+# High-level wrapper for transformer embedding models.
+# Turns text into vectors.
+# This is core for RAG: documents → embeddings → similarity search.
+
+transformers==4.57.3
+# HuggingFace Transformers library.
+# Loads LLMs, tokenizers, pipelines.
+# Used for generation, embeddings, tokenization logic.
+
+tokenizers==0.22.1
+# Fast Rust-based tokenization backend.
+# Converts text into tokens for models.
+# Required for efficient LLM inference.
+
+torch==2.9.1
+# PyTorch deep learning framework.
+# Backbone for transformers and sentence-transformers.
+# Handles tensors, GPU/CPU computation, and model execution.
+
+safetensors==0.7.0
+# Secure and fast model weight format.
+# Used instead of pickle for loading LLM parameters safely.
+
+sympy==1.14.0
+# Symbolic mathematics.
+# Not heavily used here, but appears via dependencies.
+# Handles algebraic manipulation if needed.
+
+mpmath==1.3.0
+# Arbitrary precision math.
+# Used internally by sympy and numeric systems.
+
+nltk==3.9.2
+# Natural Language Toolkit.
+# Classic NLP library: tokenization, stopwords, stemming.
+# Useful for preprocessing text before embeddings.
+
+
+# ================================
+# Vector Database / RAG Core
+# ================================
+
+faiss-cpu==1.13.2
+# Facebook AI Similarity Search.
+# Core engine for vector search.
+# Stores embeddings and finds nearest neighbors quickly.
+# This is the backbone of your RAG retrieval.
+
+diskcache==5.6.3
+# Lightweight caching system.
+# Stores objects on disk to avoid recomputation.
+# Useful for caching embeddings, results, and pipelines.
+
+networkx==3.6.1
+# Graph library.
+# Sometimes used for dependency graphs, flows, pipelines.
+# Not always directly used, but helpful for structure modeling.
+
+
+# ================================
+# LLM Runtime
+# ================================
+
+llama_cpp_python==0.3.16
+# Python bindings for llama.cpp.
+# Allows running local LLMs (GGUF models) efficiently.
+# This is how your app talks to local LLaMA-style models.
+
+
+# ================================
+# Document Processing (PDF, Images)
+# ================================
+
+pdfminer.six==20251107
+# Core PDF text extraction library.
+# Reads raw text content from PDF files.
+
+pdfplumber==0.11.8
+# Wrapper on top of pdfminer.
+# Makes extracting text, tables, layout much easier.
+
+pypdfium2==5.2.0
+# PDF rendering backend.
+# Converts pages into images or structured formats.
+
+pillow==12.0.0
+# Image processing library (PIL fork).
+# Used for handling images, PDFs, UI elements, etc.
+
+
+# ================================
+# HuggingFace / Model Downloading
+# ================================
+
+huggingface-hub==0.36.0
+# Client for HuggingFace Hub.
+# Downloads models, tokenizers, configs.
+
+hf-xet==1.2.0
+# Transfer acceleration backend used by HuggingFace.
+# Speeds up large model downloads.
+
+
+# ================================
+# Git / Project Utilities
+# ================================
+
+GitPython==3.1.46
+# Python interface to Git.
+# Lets Python scripts read repo info, commit logs, etc.
+
+gitdb==4.0.12
+# Low-level database layer for GitPython.
+
+smmap==5.0.2
+# Memory-mapped file manager for GitPython.
+
+
+# ================================
+# Networking / Web Requests
+# ================================
+
+requests==2.32.5
+# Standard HTTP client library.
+# Used to download data, models, APIs.
+
+urllib3==2.6.2
+# Lower-level HTTP engine used by requests.
+
+certifi==2025.11.12
+# SSL certificates bundle.
+# Ensures HTTPS requests are secure.
+
+idna==3.11
+# Handles international domain names for URLs.
+
+charset-normalizer==3.4.4
+# Detects text encoding in HTTP responses.
+
+
+# ================================
+# Parsing / Serialization / Config
+# ================================
+
+PyYAML==6.0.3
+# Parses YAML files.
+# Often used for configs, prompts, pipelines.
+
+toml==0.10.2
+# Parses TOML configuration files.
+# Used by tools and environments.
+
+protobuf==6.33.5
+# Google Protocol Buffers.
+# Used for fast structured data serialization in ML systems.
+
+jsonschema==4.26.0
+# Validates JSON structures.
+# Ensures configs, metadata follow schemas.
+
+jsonschema-specifications==2025.9.1
+# Schema definitions used by jsonschema.
+
+referencing==0.37.0
+# Helper for resolving references inside schemas.
+
+rpds-py==0.30.0
+# Persistent data structures backend for jsonschema.
+
+
+# ================================
+# Utilities / Helpers
+# ================================
+
+attrs==25.4.0
+# Simplifies writing Python classes.
+# Auto-generates __init__, comparisons, etc.
+
+blinker==1.9.0
+# Signal/event dispatch system.
+# Used internally by frameworks for callbacks.
+
+cachetools==6.2.6
+# In-memory caching utilities.
+# Speeds up repeated function calls.
+
+click==8.3.1
+# Command line interface helper.
+# Used by many tools for CLI behavior.
+
+filelock==3.20.1
+# Prevents concurrent access to files.
+# Useful when multiple processes share cache/models.
+
+fsspec==2025.12.0
+# Unified filesystem interface.
+# Lets code read local, cloud, remote files the same way.
+
+packaging==25.0
+# Version parsing and package comparison logic.
+
+python-dateutil==2.9.0.post0
+# Date/time parsing helpers.
+
+pytz==2025.2
+# Timezone handling.
+
+tzdata==2025.3
+# Timezone database.
+
+six==1.17.0
+# Compatibility helpers between Python versions.
+
+typing_extensions==4.15.0
+# Backports newer typing features for Python.
+
+regex==2025.11.3
+# Advanced regex engine used by NLP/tokenizers.
+
+tqdm==4.67.1
+# Progress bars for loops and downloads.
+
+tenacity==9.1.2
+# Retry logic for unstable operations (network, IO, etc).
+
+MarkupSafe==3.0.3
+# Safe string handling for HTML rendering (Jinja).
+
+Jinja2==3.1.6
+# Templating engine used internally by Streamlit and others.
+
+cffi==2.0.0
+# C Foreign Function Interface.
+# Lets Python call C code (used by cryptography, llama.cpp).
+
+cryptography==46.0.3
+# Security primitives (SSL, hashing, encryption).
+# Used for HTTPS, tokens, secure storage.
+
+pycparser==2.23
+# C parser used by cffi.
+
+
+# ================================
+# Build / Packaging
+# ================================
+
+setuptools==80.9.0
+# Python packaging system.
+# Handles installation and builds.
+
+narwhals==2.15.0
+# Compatibility layer used by pandas/arrow ecosystems.
+

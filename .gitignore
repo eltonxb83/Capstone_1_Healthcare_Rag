@@ -1,0 +1,33 @@
+#python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+#environment folders
+capstone_1/
+venv/
+.venv/
+
+#OS files
+.DS_Store
+Thumbs.db
+
+#Data preprocessing (not needed at runtime)
+data/cleaned/
+data/extracted/
+data/raw/
+
+#llm model
+llm/
+*.gguf
+*.bin
+
+#misc
+.vscode/
+.idea/
+*.log
+.cache/
+
+#Streamlit
+.streamlit/
