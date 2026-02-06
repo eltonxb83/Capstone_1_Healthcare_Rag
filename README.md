@@ -101,7 +101,7 @@ Note: The reason llama.cpp was chosen due to the fact that it allows me to go un
 - Navigate to project root folder
 - run **python3 -m venv <user_defined_env_name>**
 - run **source <user_defined_env_name>/bin/activate**	# Mac/Linux
--     **user_defined_env_name\Scripts\activate**	# Windows
+- **user_defined_env_name\Scripts\activate**	# Windows
 - run **pip install -r requirements.txt**
 - run **streamlit run streamlit_app.py**
 
@@ -153,10 +153,10 @@ Capstone_1_Healthcare_Rag
 ## Results
 
 The result is a Healthcare Assistant powered by:
-	. FAISS vector retrieval 
-	. Sentence-transformer embeddings
-	. Local LLM interface
-	. Streamlit UI
+- FAISS vector retrieval 
+- Sentence-transformer embeddings
+- Local LLM interface
+- Streamlit UI
 
 A Healthcare Assistant app that runs on RAG retrieval system + LLM for grounded medical responses without hallucinations. 
 
